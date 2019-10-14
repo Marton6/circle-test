@@ -1,0 +1,9 @@
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: node:alpine
+    steps:
+      - run: apk add --repository https://alpine.secrethub.io/alpine/edge/main --allow-untrusted secrethub-cli
+      - checkout
+      - run: secrethub run -- node test.js
