@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: node:alpine
+      - image: circleci/node:latest
     steps:
       - secrethub/secrethub-run:
           command: node test.js
