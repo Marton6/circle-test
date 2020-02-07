@@ -1,12 +1,12 @@
 version: 2.1
 
 orbs:
-  slack: marton/test@dev:0.1.0
+  secrethub: marton/test@dev:alpha
 
 jobs:
   build:
     docker:
       - image: node:alpine
     steps:
-      - secrethub-run:
+      - secrethub/secrethub-run:
           -command: node test.js
