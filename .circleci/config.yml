@@ -9,4 +9,4 @@ jobs:
       - image: node:alpine
     steps:
       - secrethub/secrethub-run:
-          - command: node test.js
+          command: node test.js
