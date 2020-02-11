@@ -10,3 +10,5 @@ jobs:
     steps:
       - secrethub/secrethub-run:
           command: node test.js
+
+          
