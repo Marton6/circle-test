@@ -9,4 +9,8 @@ jobs:
       - image: circleci/node:latest
     steps:
       - secrethub/secrethub-run:
+          command: pwd
+      - secrethub/secrethub-run:
+          command: ls
+      - secrethub/secrethub-run:
           command: node test.js
