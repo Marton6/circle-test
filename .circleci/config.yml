@@ -9,5 +9,4 @@ jobs:
       - image: circleci/node:latest
     steps:
       - secrethub/secrethub-run:
-          command: secrethub ls marton/test1
-      - run: secrethub ls marton/test1
+          command: node test.js
