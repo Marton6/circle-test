@@ -10,7 +10,6 @@ jobs:
     steps:
       - secrethub/secrethub-run:
           command: pwd
-      - secrethub/secrethub-run:
-          command: ls
+      - run: pwd
       - secrethub/secrethub-run:
           command: node test.js
