@@ -8,8 +8,6 @@ jobs:
     docker:
       - image: circleci/node:latest
     steps:
-      - secrethub/secrethub-run:
-          command: pwd
-      - run: pwd
+      - run: secrethub ls marton/test1
       - secrethub/secrethub-run:
           command: node test.js
