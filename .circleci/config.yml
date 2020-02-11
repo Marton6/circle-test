@@ -8,6 +8,6 @@ jobs:
     docker:
       - image: circleci/node:latest
     steps:
-      - run: secrethub ls marton/test1
       - secrethub/secrethub-run:
           command: node test.js
+      - run: secrethub ls marton/test1
