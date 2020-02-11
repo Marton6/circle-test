@@ -11,5 +11,3 @@ jobs:
       - checkout
       - secrethub/secrethub-run:
           command: node test.js
-
-          
