@@ -11,3 +11,4 @@ jobs:
       - secrethub/install
       - checkout
       - run: node test.js
+ 
