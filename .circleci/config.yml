@@ -11,4 +11,4 @@ jobs:
     steps:
       - secrethub/install
       - checkout
-      - run: secrethub run -- node test.js
+      - run: node test.js
