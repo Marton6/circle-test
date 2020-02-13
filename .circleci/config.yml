@@ -10,4 +10,5 @@ jobs:
     steps:
       - secrethub/install
       - checkout
+      - run: ls -la /usr/bin
       - run: secrethub run -- node test.js
