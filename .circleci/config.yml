@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build:
+    shell: secrethub run -- /bin/bash
     docker:
       - image: circleci/node:latest
     steps:
