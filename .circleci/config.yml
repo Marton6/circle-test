@@ -5,8 +5,8 @@ jobs:
     shell: secrethub run -- /bin/bash
     docker:
       - image: circleci/golang:latest
-      environment:
-        TEST: secrethub://marton/test1/password
+        environment:
+          TEST: secrethub://marton/test1/password
     steps:
       - run: git clone https://github.com/secrethub/secrethub-cli.git
       - run: go build ./secrethub-cli/cmd/secrethub
