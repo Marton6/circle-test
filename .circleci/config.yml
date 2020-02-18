@@ -2,11 +2,11 @@ version: 2.1
 
 jobs:
   build:
-    # shell: secrethub run -- /bin/bash
+    # shell: ./secrethub run -- /bin/bash
     docker:
       - image: circleci/golang:latest
         environment:
           TEST: secrethub://marton/test1/password
     steps:
       - checkout
-      - run: ./secrethub run -- /bin/sh ./test.sh
+      - run: ./test.sh
