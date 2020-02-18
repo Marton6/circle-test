@@ -4,9 +4,12 @@ jobs:
   build:
     shell: ./secrethub run -- /bin/bash
     docker:
-      - image: circleci/golang:latest
+      - image: circleci/node:latest
         environment:
-          TEST: secrethub://marton/test1/password
+          DB_PASS: secrethub://marton/test1/password
+          DB_USER: test_user
+          DB_HOST: localhost
+
     steps:
       - checkout
-      - run: ./test.sh
+      - run: node test.js
