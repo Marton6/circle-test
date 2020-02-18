@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   build:
-    # shell: ./secrethub run -- /bin/bash
+    shell: ./secrethub run -- /bin/bash
     docker:
       - image: circleci/golang:latest
         environment:
