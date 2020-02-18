@@ -8,10 +8,5 @@ jobs:
         environment:
           TEST: secrethub://marton/test1/password
     steps:
-      - run: git clone https://github.com/secrethub/secrethub-cli.git
-      - run: export GOPATH=$(pwd)
-      - run: go build ./secrethub-cli/cmd/secrethub
-      - run: rm -rf ./secrethub-cli
-      - run: sudo mv ./secrethub /usr/local/bin
       - checkout
-      - run: secrethub run -- echo ${#TEST}
+      - run: secrethub run -- /bin/sh ./test.sh
