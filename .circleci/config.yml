@@ -9,4 +9,4 @@ jobs:
           TEST: secrethub://marton/test1/password
     steps:
       - checkout
-      - run: secrethub run -- /bin/sh ./test.sh
+      - run: ./secrethub run -- /bin/sh ./test.sh
