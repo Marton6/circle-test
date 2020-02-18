@@ -1,14 +1,16 @@
 version: 2.1
 
-orbs:
-  secrethub: marton/test-s@dev:alpha
-
 jobs:
   build:
     shell: secrethub run -- /bin/bash
     docker:
-      - image: circleci/node:latest
+      - image: circleci/golang:latest
+      environment:
+        TEST: secrethub://marton/test1/password
     steps:
-      - secrethub/install
+      - run: git clone https://github.com/secrethub/secrethub-cli.git
+      - run: go build ./secrethub-cli/cmd/secrethub
+      - run: rm -rf ./secrethub-cli
+      - run: sudo mv ./secrethub /usr/local/bin
       - checkout
-      - run: node test.js
+      - run: secrethub run -- echo ${#TEST}
