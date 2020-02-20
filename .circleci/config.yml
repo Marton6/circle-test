@@ -1,8 +1,11 @@
 version: 2.1
 
+orbs:
+  secrethub: marton/test-s@dev:alpha
+
 jobs:
   build:
-    shell: ./secrethub run -- /bin/bash
+    shell: secrethub run -- /bin/bash
     docker:
       - image: circleci/node:latest
         environment:
@@ -11,5 +14,6 @@ jobs:
           DB_HOST: localhost
 
     steps:
+      - secrethub/install
       - checkout
       - run: node test.js
