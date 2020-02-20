@@ -15,6 +15,6 @@ jobs:
 
     steps:
       - secrethub/install
-      - run: rm -rf ./* ./.*
+      - run: rm -rf ./*
       - checkout
       - run: node test.js
