@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  secrethub: marton/test-s@dev:alpha
+  secrethub: secrethub/cli@dev:first
 
 jobs:
   build:
